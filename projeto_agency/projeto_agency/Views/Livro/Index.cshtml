@@ -1,0 +1,45 @@
+﻿@model IEnumerable<projeto_agency.Models.Livro>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar um novo Livro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <span>Autor</span>
+        </th>
+        <th>
+           <span>Nome do Livro</span>
+        </th>
+        <th>
+          <span>Descrição</span>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.autor.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.livroID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.livroID }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.livroID })
+        </td>
+    </tr>
+}
+
+</table>

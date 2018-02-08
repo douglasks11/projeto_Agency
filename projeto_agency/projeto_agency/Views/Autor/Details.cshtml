@@ -1,0 +1,42 @@
+﻿@model projeto_agency.Models.Autor
+
+@{
+    ViewBag.Title = "Detalhes de Autor";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Autor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <span>Nome do Autor</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            <span>Senha</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senha)
+        </dd>
+
+        <dt>
+           <span>E-mail</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.autorID }) |
+    @Html.ActionLink("Voltar a lista", "Index")
+</p>

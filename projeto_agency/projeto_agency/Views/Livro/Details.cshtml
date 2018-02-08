@@ -1,0 +1,42 @@
+﻿@model projeto_agency.Models.Livro
+
+@{
+    ViewBag.Title = "Detalhes de Livro";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Livro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <span>Nome do Autor</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autor.nome)
+        </dd>
+
+        <dt>
+            <span>Nome do Livro</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            <span>Descrição do livro</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.livroID }) |
+    @Html.ActionLink("Voltar a lista", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<projeto_agency.Models.Autor>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Lista de Autores Cadastrados</h2>
+<br />
+<br />
+<br/>
+<div class="container">
+    <div class="col-sm-12">
+            @Html.ActionLink("Cadastrar Autor", "Create")
+</div>
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    <span>Autor</span>
+                </th>
+                <th>
+                    <span>E-mail</span>
+                </th>
+                <th>Ações</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.autorID }) |
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.autorID }) |
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.autorID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+
